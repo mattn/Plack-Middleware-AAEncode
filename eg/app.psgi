@@ -9,6 +9,9 @@ my $app = sub { [ 302, [ "Location" => "/index.html" ], [] ] };
 
 builder {
     enable 'AAEncode';
-    enable 'Static', path => qr{^/.}, root => file(__FILE__)->absolute->dir;
+    enable 'Static',
+      path     => qr{^/.},
+      root     => file(__FILE__)->absolute->dir,
+      encoding => 'utf-8';
     $app;
 };
