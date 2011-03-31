@@ -8,3 +8,5 @@ __DATA__
 mattn
 mattn.jp@gmail.com
 Plack::Middleware::AAEncode
+Yasuhiro
+Matsumoto
