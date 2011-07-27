@@ -86,6 +86,9 @@ sub call {
                 $out = encode_utf8($out);
                 $res->[2] = [$out];
                 $h->set( 'Content-Length', length $out );
+                $h->set( 'Content-Type',
+                  $h->get('Content-Type') . "; charset=utf-8" )
+                    unless $h->get('Content-Type') =~ /;\s*charset\s*=\s*/;
                 $h->set( 'X-AAEncode',     'encoded' );
             }
         }
